@@ -1,4 +1,4 @@
-import GlobalHeader from "../../../../components/global components/header/globalHeader"
+import ReguserHeader from "../../../../components/global components/header/reguserHeader"
 import { google_sans } from "../../../../fonts/fonts"
 
 /**
@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }) {
       */}
         
         {/* Persistent Navigation: Remains fixed at the top across all routes */}
-        <GlobalHeader />
+        <ReguserHeader />
 
         {/* Page Content Injection:
             This is where your Home, Profile, or Marketplace pages are rendered.

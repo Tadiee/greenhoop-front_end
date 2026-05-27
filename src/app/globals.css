@@ -41,14 +41,14 @@
 
   .scrollbar-thin {
     scrollbar-width: thin; /* Firefox */
-    scrollbar-color: rgba(0, 0, 0, .4) transparent;
+    scrollbar-color: rgba(219, 219, 219, 0.4) transparent;
   }
 
   .scrollbar-thin::-webkit-scrollbar {
     width: 3px;
     height: 3px;
   }
-
+  
   /* remove track box */
   .scrollbar-thin::-webkit-scrollbar-track {
     background: transparent;
@@ -67,8 +67,6 @@
   }
   
 }
-
-
 
 body {
   background: var(--background);

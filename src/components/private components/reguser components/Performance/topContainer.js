@@ -1,8 +1,28 @@
+"use client"
+import React, { useState, useEffect } from 'react';
 import { poppins } from '@/fonts/fonts';
 import { Plus } from 'lucide-react';
 import { PackageCheck } from 'lucide-react';
 
-export default function PerfomanceTopContainer () {
+export default function PerfomanceTopContainer ({ onOpenModal, summary }) {
+    const [activeCount, setActiveCount] = useState(0);
+
+    useEffect(() => {
+        const fetchCount = async () => {
+            try {
+                const res = await fetch('http://127.0.0.1:8000/marketplace/users/me/listings?page_size=1', { credentials: 'include' });
+                if (!res.ok) return;
+                const data = await res.json();
+                setActiveCount(data.count ?? 0);
+            } catch {}
+        };
+        fetchCount();
+    }, []);
+
+    const totalPayout = summary?.total_payout ?? 0;
+    const payoutWhole = Math.floor(totalPayout).toLocaleString();
+    const payoutCents = (totalPayout % 1).toFixed(2).slice(1);
+
     return (
         <>
             {/* --- 01. SELLER OVERVIEW --- */}
@@ -12,16 +32,16 @@ export default function PerfomanceTopContainer () {
                 <div className="flex justify-between items-start">
                     <div className="space-y-2">
                     <p className="text-[11px] font-black uppercase tracking-[0.5em] text-[#08CB00]">Marketplace Sales</p>
-                    <h1 className="text-9xl font-black tracking-tighter leading-none">$655.<span>00</span></h1>
+                    <h1 className="text-9xl font-black tracking-tighter leading-none">${payoutWhole}<span>{payoutCents}</span></h1>
                     </div>
                     <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-3xl text-right">
                     <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-1">Active Offers</p>
-                    <p className="text-2xl font-black text-[#08CB00]">04</p>
+                    <p className="text-2xl font-black text-[#08CB00]">{String(activeCount).padStart(2, '0')}</p>
                     </div>
                 </div>
                 
                 <div className="flex flex-wrap gap-4">
-                    <button className="bg-[#08CB00] text-black px-12 py-5 rounded-3xl font-black uppercase text-[11px] tracking-widest hover:bg-white transition-all shadow-xl shadow-[#08CB00]/20 flex items-center gap-3">
+                    <button onClick={onOpenModal} className="bg-[#08CB00] text-black px-12 py-5 rounded-3xl font-black uppercase text-[11px] tracking-widest hover:bg-white transition-all shadow-xl shadow-[#08CB00]/20 flex items-center gap-3">
                     Post New Item <Plus size={16} />
                     </button>
                     <button className="bg-white/5 border border-white/10 text-white px-10 py-5 rounded-3xl font-black uppercase text-[11px] tracking-widest hover:bg-white/10 transition-all flex items-center gap-3">

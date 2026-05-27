@@ -1,0 +1,6 @@
+# .aiexclude
+node_modules/
+.next/
+venv/
+*.log
+dist/

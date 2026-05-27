@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from 'react';
+import Link from 'next/link';
 import { poppins, inter, roboto } from "@/fonts/fonts";
 import { FaLeaf } from "react-icons/fa";
 import { HiCpuChip } from "react-icons/hi2";
@@ -86,14 +87,14 @@ export default function MiddleContainer() {
           {/* Two-Button Layout */}
           <div className="flex items-center gap-4">
             {/* Primary Button: Solid Green */}
-            <button className="px-8 py-3 bg-[#08CB00] text-white font-bold rounded-full shadow-lg hover:bg-[#06a000] hover:shadow-[#08cb0080]/50 hover:shadow-xl transition-all duration-300 active:scale-95">
+            <Link href="/reguser/Submit" className="px-8 py-3 bg-[#08CB00] text-white font-bold rounded-full shadow-lg hover:bg-[#06a000] hover:shadow-[#08cb0080]/50 hover:shadow-xl transition-all duration-300 active:scale-95">
               Recycle Now
-            </button>
+            </Link>
             
             {/* Secondary Button: Outline White */}
-            <button className="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 active:scale-95">
+            <Link href="/reguser/Incentives" className="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 active:scale-95">
               View Rewards
-            </button>
+            </Link>
           </div>
           
           {/* Sub-text for Engagement */}

@@ -12,12 +12,12 @@ export default function MainContainer() {
   return (
     /* Main Layout Wrapper:
        - flex-row: Aligns the three sub-containers horizontally.
-       - h-[85%]: Occupies 85% of the parent's vertical height.
+       - h-full: Occupies the full height of the parent.
        - mt-3: Adds a small top margin to separate the dashboard from the header/navigation.
        - justify-between: Evenly distributes space so the containers stick to the left, center, and right.
        - p-1: Provides a tiny internal padding to prevent content from touching the screen edges.
     */
-    <div className="flex flex-row h-[85%] mt-3 w-full items-center justify-between font-sans dark:bg-black p-1" >
+    <div className="flex flex-row h-full mt-3 w-full items-stretch justify-between font-sans dark:bg-black p-2 gap-2" >
       
       {/* Left Column: 
           Typically contains the User Stats (Submission Rate/Money) and the Notifications Hub. 

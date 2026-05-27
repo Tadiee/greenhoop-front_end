@@ -1,8 +1,8 @@
 import { Poppins } from "next/font/google";
-import { Google_Sans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { Nova_Square } from "next/font/google";
 import { Kavoon } from "next/font/google";
-import { Google_Sans_Code } from "next/font/google";
+import { DM_Mono } from "next/font/google";
 import {Inter} from "next/font/google";
 import { Trykker } from "next/font/google";
 import { Roboto } from "next/font/google";
@@ -15,7 +15,7 @@ export const poppins = Poppins ({
     
 });
 
-export const google_sans = Google_Sans ({
+export const google_sans = DM_Sans ({
     subsets: ["latin"],
     weight: ["400", "500", "600", "700"],
     variable: "--font-google-sans",
@@ -33,7 +33,7 @@ export const kavoon = Kavoon ({
     variable: "--font-kavoon",
 })
 
-export const  google_sans_code = Google_Sans_Code ({
+export const google_sans_code = DM_Mono ({
     subsets: ["latin"],
     weight: ["400"],
     variable: "--font-google-sans-code",

@@ -1,5 +1,7 @@
 import "./globals.css";
 import { google_sans } from "@/fonts/fonts";
+import { RoleProvider } from "./RoleConext";
+
 export const metadata = {
   title: "GreenHoop",
   description: "An e-waste management platform",
@@ -9,9 +11,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`h-screen w-screen overflow-hidden ${google_sans.className}`}>
-        {children}
+      <RoleProvider>
+      <body className={`h-screen w-screen  overflow-hidden ${google_sans.className}`}>
+          {children}
       </body>
+      </RoleProvider>
     </html>
   );
 }
