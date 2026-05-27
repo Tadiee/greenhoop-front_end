@@ -1,8 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GreenHoop Frontend
+
+GreenHoop is an innovative e-waste recycling platform. This repository contains the frontend application built with Next.js, designed to facilitate the submission, tracking, and processing of electronic waste.
+
+## Features
+
+- **AI-Powered E-Waste Detection**: Upload device photos for automatic categorization and payout estimation.
+- **Interactive Location Services**: Drop-off point selection and courier tracking using Leaflet maps.
+- **Recycler Dashboard**: Comprehensive lifecycle management (Assessment, Processing, Extraction, and End-of-Life Outcome).
+- **Role-Based Workflows**: Tailored experiences for regular users, recyclers, couriers, and technicians.
+- **Rewards & Analytics**: Real-time breakdown of device value based on hardware integrity, mineral composition, and market rates.
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies if you haven't already:
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
